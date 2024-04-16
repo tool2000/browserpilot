@@ -1,0 +1,20 @@
+instructions:
+- BEGIN_FUNCTION search_ceo
+- Go to https://www.google.com/?gl=jp&hl=ja
+- Ask LLM to find the search textarea and click it.
+- Type in "現在、トヨタのCEOは誰ですか?" and press enter.
+- Wait 2 seconds.
+- Find all the anchor tag that attribute jsname is "UWckNb" and attribute href exists.
+- For each one, get the href of the anchor tag inside. 
+- Take the first fifth above urls from the above process.
+- For each of them, go to the page, wait 4.3 second, and then go back to the previous page.
+- If you encounter error in the above process, continue.
+- END_FUNCTION
+- RUN_FUNCTION search_ceo
+- Wait for 8 seconds.
+- Query memory with the prompt "現在、トヨタのCEOは誰ですか?" and store the result.
+- Print the result.
+- Query memory with the prompt "トヨタCEOの履歴について詳しく説明してください。" and store the result.
+- Print the result.
+- Query memory with the prompt "トヨタCEOの信念と経営哲学について詳しく説明してください。" and store the result.
+- Print the result.

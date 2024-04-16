@@ -1,4 +1,5 @@
 .env
+virtual
 chromedriver
 user_data/
 private/

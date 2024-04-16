@@ -10,7 +10,8 @@ from bs4.element import NavigableString
 from bs4.element import Tag
 from llama_index.core import Document, GPTVectorStoreIndex
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+# from selenium.webdriver.chrome.service import Service
+import chromedriver_autoinstaller
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
@@ -130,8 +131,9 @@ class GPTSeleniumAgent:
             _chrome_options.add_argument(f"{option}={chrome_options[option]}")
 
         # Instantiate Service with the path to the chromedriver and the options.
-        service = Service(chromedriver_path)
-        self.driver = webdriver.Chrome(service=service, options=_chrome_options)
+        # service = Service(chromedriver_path)
+        # self.driver = webdriver.Chrome(service=service, options=_chrome_options)
+        self.driver = webdriver.Chrome(options=_chrome_options)
         # 🤫 Evade detection.
         self.driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 

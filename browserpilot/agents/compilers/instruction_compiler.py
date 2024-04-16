@@ -6,7 +6,7 @@ import io
 import logging
 import traceback
 import os
-
+from dotenv import load_dotenv
 from typing import Dict, List, Union
 
 from openai import OpenAI
@@ -15,8 +15,11 @@ from openai import RateLimitError, Timeout, APIError, APIConnectionError, OpenAI
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+
+load_dotenv()
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # Instantiate OpenAI with OPENAI_API_KEY.
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 """Set up all the prompt variables."""
 

@@ -71,6 +71,7 @@ Your code must obey the following constraints:
 - Respect case sensitivity in the instructions.
 - Does not call any functions besides those given above and those defined by the base language spec.
 - You may not import any modules. You may not use any external libraries.
+- If you encounter 'Try this', wrap the instruction in a try/except statement. 
 
 OUTPUT: ```python"""
 
@@ -403,11 +404,11 @@ class InstructionCompiler:
             }
         )
         to_dump = self.instructions
-        with open(filename, "w") as f:
+        with open(filename, "w", encoding='utf-8') as f:
             if filename.endswith(".json"):
-                json.dump(to_dump, f, indent=4)
+                json.dump(to_dump, f, indent=4, ensure_ascii=False)
             elif filename.endswith(".yaml"):
-                yaml.dump(to_dump, f)
+                yaml.dump(to_dump, f, ensure_ascii=False)
 
 
 if __name__ == "__main__":

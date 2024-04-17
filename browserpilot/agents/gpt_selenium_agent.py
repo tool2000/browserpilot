@@ -592,7 +592,8 @@ class GPTSeleniumAgent:
         """Queries the memory of the LLM."""
         if self.memory_folder:
             resp = self.memory.query(prompt)
-            return resp
+            # return resp
+            return resp.response.strip()
         logger.error("Memory is disabled.")
 
     def ask_llm_to_find_element(self, element_description):

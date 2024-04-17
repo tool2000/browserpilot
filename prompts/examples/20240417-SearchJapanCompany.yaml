@@ -1,0 +1,18 @@
+instructions:
+- Set variable 'statement1' equal to "現在、トヨタのCEOは誰ですか?"
+- Set variable 'statement2' equal to "トヨタCEOの履歴について詳しく説明してください。"
+- Set variable 'statement3' equal to "トヨタCEOの信念と経営哲学について詳しく説明してください。"
+- Go to https://www.google.com/?gl=jp&hl=ja
+- Ask LLM to find the search textarea and click it.
+- Type in the statement1 and press enter.
+- Wait 2 seconds.
+- Find all the anchor tag that attribute jsname is "UWckNb" and attribute href exists.
+- Try this. For each one, get the href of the anchor tag inside. 
+- Try this. For each of them, go to the page, wait 6.3 second, and then go back to the previous page.
+- Wait for 8 seconds.
+- Query memory with the prompt that is equal to statement1 and store the result into 'answer1'.
+- Print the answer1.
+- Query memory with the prompt that combine the answer1 and statement2. store the result into 'answer2'.
+- Print the answer2.
+- Query memory with the prompt that combine the answer1 and statement3. store the result into 'answer3'.
+- Print the answer3.

@@ -1,0 +1,10 @@
+instructions:
+- Set variable 'statement1' equal to "現在、トヨタのCEOは誰ですか?"
+- Set variable 'statement2' equal to "トヨタCEOの履歴について詳しく説明してください。"
+- Set variable 'statement3' equal to "トヨタCEOの信念と経営哲学について詳しく説明してください。"
+- Query memory with the prompt that is statement1 and store the result into 'answer1'.
+- Print the answer1.
+- Query memory with the prompt that combine the answer1 and statement2. store the result into 'answer2'.
+- Print the answer2.
+- Query memory with the prompt that combine the answer1 and statement3. store the result into 'answer3'.
+- Print the answer3.
